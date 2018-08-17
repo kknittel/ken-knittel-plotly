@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <title>Plotly.js</title>
+</head>
+
+<body>
+  <h1>Plotly Example</h1>
+
+  <p>This is an example of using Plotly to graph two different use cases in Ajijic Mexico. The CFE (Mexican Electric Company)
+    sets the rate by adding up the usage in the past 12 months. If it goes over 3000 killowatt hours the rate is about 4.5
+    times the normal rate. The billing is in 2 month cycles. So this means that it is better keep the average usage below
+    500 killowatt hours per billing cycle. </p>
+  <p>Go to
+    <a href="https://github.com/kknittel/ken-knittel-plotly.git">Github Repo</a> to see the code.
+  </p>
+  <h1>Killowatt Hours Used June 2017 through May 2018</h1>
+  <div id="myDiv" class="red"></div>
+
+  <h3>Deanna - used 2571 killowatt hours for the year. Total cost was 4171 pesos </h3>
+  <div id="myDiv2"></div>
+  <h3>Ken and Joyce - used 6023 killowatt hours for the year. Total cost was 29,958 pesos </h3>
+  <div id="myDiv2"></div>
+
+  <script>
+    var data = [
+      {
+        x: ['jun-jul', 'aug-sep', 'oct-nov', 'dec-jan', 'feb-mar', 'apr-may'],
+        y: [528, 471, 400, 528, 317, 327],
+        type: 'line'
+      }];
+
+    Plotly.newPlot('myDiv', data);
+  </script>
+  <script>
+    var data = [
+      {
+        x: ['jun-jul', 'aug-sep', 'oct-nov', 'dec-jan', 'feb-mar', 'apr-may'],
+        y: [1741, 1390, 766, 626, 824, 676],
+        type: 'line'
+      }];
+
+    Plotly.newPlot('myDiv2', data);
+  </script>
+
+
+</body>
+
+</html>
